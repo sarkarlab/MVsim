@@ -26,18 +26,23 @@ Installation and setup for the Web App:
 
 The directory MVSim contains the following uncompiled files and folders for the model:
 
-* [State_images] Containing the png files for the GUI 
-* [Diff_Equations] Containing the 9 .m files with the ODE system for the MATLAB ODE solver
-* MVsimV2.mappl – the code for the GUI interface in the MATLAB App Designer	
-* Multivalent_Main.m – The code for plotting and for initial information for the model
-* EffC_Calculattor.m – Used for the effective concentration calculation in the GUI
+* [Images] Containing the png files in the Images folder for the GUI 
+* [Diffs] Containing the 189 automatically generates .m files with the ODE system for the MATLAB ODE solver
+* MVsim_GUI_V1_9.mlapp – the code for the GUI interface in the MATLAB App Designer	
+* GUI_Manual_input3x3x3.m – The code for plotting and for initial information for the model
 * EffC_Calculator_polar.m - Used for the effective concentration calculation using polar coordinate integration in the GUI
+* [Support_Scripts] - A collection of scripts used for state and ODE system genration used for the .m files generation is the Diffs folder (not required for the GUI) 
 * copyUIAxes.m and copyUIAxes.ReadMe.txt - used for saving the images and figures in the GUI
 
 
 Usage: 
+Web App:
 1. After installing the web app, the page is accessible via: <host>:<port> /webapps/home/ 
 2. After choosing the desired version the filling up the parameters in the Main and Parameters tabs and pushing the Initiate button the app droves the desired plots. 
+
+MATLAB App:
+1. Install MATLAB MVsim app
+2. Input parameters and press initiate and run button
 
 Troubleshooting:
 
