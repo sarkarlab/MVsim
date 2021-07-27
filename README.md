@@ -4,7 +4,9 @@ Multivalent binding kinetics simulator
 MVSim Multidomain V 1.9
 Bence Bruncsics, Wesley J. Errington, Casim A. Sarkar University of Minnesota
 June 26, 2021
+
 Technical questions: Contact bruncsics@mit.bme.hu
+
 License questions: Contact csarkar@umn.edu
 
 Requirements:
