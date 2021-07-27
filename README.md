@@ -1,9 +1,9 @@
 # MVSim
 Multivalent binding kinetics simulator
 
-MVSim Multidomain V 2.3
+MVSim Multidomain V 1.9
 Bence Bruncsics, Wesley J. Errington, Casim A. Sarkar University of Minnesota
-June 9, 2020
+June 26, 2021
 Questions: Contact bruncsics@mit.bme.hu
 
 Requirements:
@@ -21,7 +21,7 @@ Available App version
 Installation and setup for the Web App:
 1. Setting up the webserver by following the instruction in: https://www.mathworks.com/help/webappserver/ug/set-up-matlab-web-app-server.html
 2. Staring the Webserver following the instructions in: [link]
-3. Coping the MVSimMultiDomainV2.3.ctf file to  the default /local/MathWorks/webapps/R2019b/apps/ location
+3. Coping the ctf file to  the default /local/MathWorks/webapps/R2019b/apps/ location
 
 The directory MVSim contains the following uncompiled files and folders for the model:
 
