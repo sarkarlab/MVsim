@@ -5,8 +5,8 @@ MVSim Multidomain V 1.9
 Bence Bruncsics, Wesley J. Errington, Casim A. Sarkar University of Minnesota
 June 26, 2021
 
+Questions related to licensing: csarkar@umn.edu
 Code related questions: bruncsics@mit.bme.hu
-Questions related to icensing: csarkar@umn.edu
 
 Requirements:
 - MATLAB R2019b or newer [link]
