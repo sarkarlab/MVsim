@@ -56,6 +56,4 @@ switch length(state)
 end
 
 
-%new_order = struct("rec_pos_1", state(1), "rec_pos_2", state(2), "rec_pos_3", state(3));
-
 end
