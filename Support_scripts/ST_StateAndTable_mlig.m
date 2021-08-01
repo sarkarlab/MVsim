@@ -122,15 +122,4 @@ for i = 1:length(Array_short_states)
     Short2_KonTable(:,i) = Kon_col(:,1);
 end
 
-% multiplyer = max(floor(Array_short_states/10),[],2);
-% classes = zeros(length(multiplyer),1);
-% classes(sum(floor(Array_short_states/10)==0,2)==2) = 1;
-% classes(sum(floor(Array_short_states/10)==0,2)==1 & max(floor(Array_short_states/10),[],2)==2) = 11;
-% classes(max(floor(Array_short_states/10),[],2)==3) = 111;
-% classes(sum(floor(Array_short_states/10)==0,2)==1 & max(floor(Array_short_states/10),[],2)==1) = 2;
-% classes(sum(floor(Array_short_states/10)==0,2)==0 & max(floor(Array_short_states/10),[],2)==1) = 3;
-% classes(sum(floor(Array_short_states/10)==0,2)==0 & max(floor(Array_short_states/10),[],2)==2) = 21;
-% 
-% multiplyer = multiplyer';
-% classes = classes';
 end
