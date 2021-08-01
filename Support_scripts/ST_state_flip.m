@@ -18,11 +18,7 @@ end
 
 function state = monoligand_state_flip(state)
 %% Create unique state names 
-% 
-%state = struct2array(state);
 
-%% Get the repeated ligands to a list 
-%lig_0 = floor(state/10)==0;
 lig_1 = floor(state/10)==1;
 lig_2 = floor(state/10)==2;
 lig_3 = floor(state/10)==3;
