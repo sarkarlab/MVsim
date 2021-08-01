@@ -57,7 +57,7 @@ switch vR
                     link =  strjoin([Kon, "*", EffC],"");
                 end
             else
-                % Check for correct run
+                % Critical step for multiple ligands
                 if new_ligand_rank == 1
                     link = strjoin(["L1*", Kon],"");
                 elseif new_ligand_rank == 2
