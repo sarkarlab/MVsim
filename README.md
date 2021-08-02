@@ -3,6 +3,8 @@ Multivalent reaction-kinetics simulator
 
 Please see the original research associated with this simulator: https://www.biorxiv.org/content/10.1101/2021.08.01.454686v1
 
+The installation files can be found here: https://github.com/sarkarlab/MVsim/
+
 MVsim v0.9
 
 Bence Bruncsics, Wesley J. Errington, Casim A. Sarkar
