@@ -4,7 +4,11 @@ Multivalent reaction-kinetics simulator
 Please see the original research associated with this simulator: https://www.biorxiv.org/content/10.1101/2021.08.01.454686v1
 
 MVsim v0.9
-Bence Bruncsics, Wesley J. Errington, Casim A. Sarkar University of Minnesota
+
+Bence Bruncsics, Wesley J. Errington, Casim A. Sarkar
+
+University of Minnesota
+
 June 26, 2021
 
 Questions related to licensing: csarkar@umn.edu
