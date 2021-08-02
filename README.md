@@ -51,8 +51,8 @@ Troubleshooting:
 
 - Undefined function error: 
   - Check for all the required MATLAB packages
-  -Check for MATLAB version
-  -Add the Diff_Equations folder to the path
+  - Check for MATLAB version
+  - Add the Diff_Equations folder to the path
 - Missing images: add the image 
   - Add State_images folder to the path
 
