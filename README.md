@@ -1,7 +1,9 @@
-# MVSim
-Multivalent binding kinetics simulator
+# MVsim
+Multivalent reaction-kinetics simulator
 
-MVSim Multidomain V 1.9
+Please see the original research associated with this simulator: https://www.biorxiv.org/content/10.1101/2021.08.01.454686v1
+
+MVsim v0.9
 Bence Bruncsics, Wesley J. Errington, Casim A. Sarkar University of Minnesota
 June 26, 2021
 
@@ -48,7 +50,7 @@ MATLAB App:
 Troubleshooting:
 
 - Undefined function error: 
-  - Check for all the required MARLAB packages
+  - Check for all the required MATLAB packages
   -Check for MATLAB version
   -Add the Diff_Equations folder to the path
 - Missing images: add the image 
