@@ -1,9 +1,9 @@
 # MVsim
 Multivalent reaction-kinetics simulator
 
-Please see the [original research associated with this simulator](https://www.biorxiv.org/content/10.1101/2021.08.01.454686v1).
+Please see the original research associated with this simulator at [https://www.biorxiv.org/content/10.1101/2021.08.01.454686v1](https://www.biorxiv.org/content/10.1101/2021.08.01.454686v1).
 
-The installation files can be found [here](https://github.com/sarkarlab/MVsim/).
+The installation files can be found at [https://github.com/sarkarlab/MVsim/](https://github.com/sarkarlab/MVsim/).
 
 ***
 
@@ -20,7 +20,7 @@ Questions related to licensing: csarkar@umn.edu
 Code related questions: bruncsics@mit.bme.hu
 
 Requirements:
-- [MATLAB R2019b or newer ](https://www.mathworks.com/)
+- [MATLAB R2019b or newer](https://www.mathworks.com/)
   - Packages: Image visualization toolbox
 - For hosting the webserver:
   - MATLAB [Runtime](https://www.mathworks.com/products/compiler/matlab-runtime.html) 
