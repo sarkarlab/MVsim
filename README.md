@@ -1,6 +1,3 @@
-# MVsim
-Multivalent reaction-kinetics simulator
-
 Please see the original research associated with this simulator at [https://www.biorxiv.org/content/10.1101/2021.08.01.454686v1](https://www.biorxiv.org/content/10.1101/2021.08.01.454686v1).
 
 The installation files can be found at [https://github.com/sarkarlab/MVsim/](https://github.com/sarkarlab/MVsim/).
