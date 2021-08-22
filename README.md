@@ -12,6 +12,8 @@ University of Minnesota
 
 June 26, 2021
 
+MVsim is licensed under the [MIT License](https://github.com/sarkarlab/MVsim/blob/main/LICENSE).
+
 Questions related to licensing: csarkar@umn.edu
 
 Code related questions: bruncsics@mit.bme.hu
@@ -29,9 +31,9 @@ Available App version
 - Web App: deployable web app file
 
 Installation and setup for the Web App:
-1. Setting up the webserver by following the [instruction](https://www.mathworks.com/help/webappserver/ug/set-up-matlab-web-app-server.html)
+1. Setting up the webserver by following the [instructions](https://www.mathworks.com/help/webappserver/ug/set-up-matlab-web-app-server.html)
 2. Staring the Webserver following the [instructions](https://www.mathworks.com/help/compiler/webapps/run-a-web-app.html)
-3. Coping the ctf file to  the default /local/MathWorks/webapps/R2019b/apps/ location
+3. Copying the ctf file to the default /local/MathWorks/webapps/R2019b/apps/ location
 
 The directory MVSim contains the following uncompiled files and folders for the model:
 
@@ -44,7 +46,8 @@ The directory MVSim contains the following uncompiled files and folders for the 
 * copyUIAxes.m and copyUIAxes.ReadMe.txt - used for saving the images and figures in the GUI ([license information at the end of the script](https://www.mathworks.com/matlabcentral/fileexchange/73103-copyuiaxes))
 
 
-Usage: 
+Usage:
+
 Web App:
 1. After installing the web app, the page is accessible via: <host>:<port> /webapps/home/ 
 2. After choosing the desired version the filling up the parameters in the Main and Parameters tabs and pushing the Initiate button the app droves the desired plots. 
@@ -53,12 +56,15 @@ MATLAB App:
 1. Install MATLAB MVsim app
 2. Input parameters and press initiate and run button
 
+Installation and run times:
+1. Typical installation time is ~1 min.
+2. Run time varies based on the complexity of the simulation. For the included bivalent-bivalent demo with default parameters, the typical run time should be < 30 s. More involved simulations can take up to 30 min; a progress bar is included in the app for the user to monitor the calculations and ensure that the app has not stalled.
+
 Troubleshooting:
 
 - Undefined function error: 
-  - Check for all the required MATLAB packages
-  - Check for MATLAB version
+  - Check for all required MATLAB packages
+  - Check MATLAB version (2019b required; 2021a preferred)
   - Add the Diff_Equations folder to the path
-- Missing images: add the image 
+- Missing images:
   - Add State_images folder to the path
-
