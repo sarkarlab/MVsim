@@ -35,6 +35,11 @@ Installation and setup for the Web App:
 2. Staring the Webserver following the [instructions](https://www.mathworks.com/help/compiler/webapps/run-a-web-app.html)
 3. Copying the ctf file to the default /local/MathWorks/webapps/R2019b/apps/ location
 
+Installation and setup for standalone desctop app:
+1. Downloading and installing MATLAB [Runtime](https://www.mathworks.com/products/compiler/matlab-runtime.html) for [windows](https://ssd.mathworks.com/supportfiles/downloads/R2021a/Release/5/deployment_files/installer/complete/win64/MATLAB_Runtime_R2021a_Update_5_win64.zip), [linux](https://ssd.mathworks.com/supportfiles/downloads/R2021a/Release/5/deployment_files/installer/complete/glnxa64/MATLAB_Runtime_R2021a_Update_5_glnxa64.zip), [mac](https://ssd.mathworks.com/supportfiles/downloads/R2021a/Release/5/deployment_files/installer/complete/maci64/MATLAB_Runtime_R2021a_Update_5_maci64.dmg.zip)
+2. Running the MyAppInstaller_web.exe executable file and follow the installation instractions
+3. Run the installd version of MVsim.
+
 The directory MVSim contains the following uncompiled files and folders for the model:
 
 * [Images] Containing the png files in the Images folder for the GUI 
