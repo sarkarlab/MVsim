@@ -1,6 +1,4 @@
 function new_order = ST_state_flip(state)
-% Function responsible for a step where the simmetric states are merged
-% into a single state.
     % creates a two digit long state struct ligand by ligand
     state = struct2array(state);
     state_lig1 = monoligand_state_flip(mod(state.*(floor(state/100)==1),100));

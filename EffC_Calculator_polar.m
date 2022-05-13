@@ -1,13 +1,14 @@
 function  EffC_Calculator_polar(app)
-% This functions is responsible of the effective concentration calculation
-
-% Initial state
+%% Initial state
 app.Parameters.Effective_concentrations = struct();
 app.Parameters.EffCs = struct();
 if app.Parameters.Receptor(1).Valency > 1 && (app.Parameters.Ligand(1).Valency > 1 || app.Parameters.Ligand(2).Valency > 1 || app.Parameters.Ligand(3).Valency > 1)
 
+%Progress_steps = nchoosek(app.Parameters.Receptor(1).Valency,2) + nchoosek(app.Parameters.Ligand(1).Valency,2) + nchoosek(app.Parameters.Ligand(2).Valency,2) + nchoosek(app.Parameters.Ligand(3).Valency,2);
+%Progress_step_size = ceil(300*0.6/Progress_steps);
+%Progress_bar_size = 1;
+%app.Progress_text.Text = 'Calculateing Effective Conc';
 
-% Iterative process to generate placeholders for the ligand binding states
 for ligand_i = 1:size(app.Parameters.Ligand,2)
     if app.Parameters.Ligand(ligand_i).Valency == 0
         continue
@@ -69,7 +70,6 @@ for ligand_i = 1:size(app.Parameters.Ligand,2)
     end
 end
 
-% Iterative process to generate placeholders for the receptor binding states
 for receptor_i = 1:size(app.Parameters.Receptor,2)
     
     PDF = PDF_calculator(app.Parameters.Receptor(receptor_i).LinkerLength, app.Parameters.Receptor(receptor_i).LinkerLP, app.Parameters.Receptor(receptor_i).Diameter, app.Parameters.Receptor(receptor_i).Valency);
@@ -128,11 +128,17 @@ for receptor_i = 1:size(app.Parameters.Receptor,2)
         end
     end
 end
+%% Adding user defined PDFs
+% app.Parameters.Ligand(1).binding_state(1).PDF_x = 
+% app.Parameters.Ligand(1).binding_state(1).PDF_y =
+% 
+% app.Parameters.Ligand(2).binding_state(1).PDF_x = 
+% app.Parameters.Ligand(2).binding_state(1).PDF_y =
 
 %% Calculation of the [Leff]
 size(app.Parameters.Receptor,2)
 
-% Iterates to the binding states and calculates their PDFs
+
 number_of_EffC = 1;
 app.Parameters.Effective_concentrations = struct();
 for receptor_i = 1:size(app.Parameters.Receptor,2)
@@ -199,7 +205,12 @@ end
 end
 
 function PDF = PDF_calculator(Lenght_Counture, Length_Persistance, unit_diameter, valency)
-% General PDF calculator script
+
+
+% Lenght_Counture = [100,100];
+% Length_Persistance = [5,5];
+% unit_diameter = [30,30,30];
+% valency = 3;
 
 if valency == 1
     PDF = 1;
@@ -215,6 +226,7 @@ for repeat_i = 1:valency-1
     PDF_steps(repeat_i).x_for_interpol = x_for_interpol;
     PDF_steps(repeat_i).y_for_interpol = y_for_interpol;
     PDF_steps(repeat_i).length = Lenght_Counture(repeat_i) + unit_diameter(repeat_i)/2;    
+    %f_Ligand = @(x) interp1(x_for_interpol, y_for_interpol,x); 
 end
 
 PDF.PDF_one_jump = struct("x_for_interpol",[],"y_for_interpol",[],"length",0);
@@ -291,10 +303,7 @@ function [reverse_value, straight_value] = EffC_convolution(receptor, ligand, li
 end
 
 function [x,y] = add_function(f_root, f_toadd, root_length, toadd_length, reverse_direction)
-% Part of the iterative joint PDF generation
-% Step responsible for adding a unit to the existing joint PDF
-
-% Input check
+%% Input check
     if nargin ==4
         reverse_direction=false;
     end
@@ -334,11 +343,7 @@ y = [y,0,0];
 end
 
 function [x,y] = add_unit(f_root, root_length, unit_diameter,reverse_direction)
-% Part of the iterative joint PDF generation
-% Step responsible for adding a (linker) function to the existing joint PDF
-
-
-% Input check
+%% Input check
     if nargin ==3
         reverse_direction=false;
     end
@@ -375,7 +380,6 @@ function [x,y] = add_unit(f_root, root_length, unit_diameter,reverse_direction)
 end
 
 function fx = general_linker_PDF(Lenght_Counture, Length_Persistance)
-    % The wormlike chain funciton  used in linkers
     fx = @(r)  max(0,real(  (1./(1-(r.^2/Lenght_Counture^2) ).^4.5 ).*       exp(-(9*Lenght_Counture/(8*Length_Persistance))./(1-(r.^2/Lenght_Counture^2)) ) ));
 end
 

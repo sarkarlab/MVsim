@@ -1,9 +1,114 @@
 function Output_values = GUI_Manual_input3x3x3(app)
-%This funciton handles the class rules and the ODE function based on the GUI parameters.
-% It also allowes manula inputs for debugging and specific options
 
+% est_full_progress = (app.app.Parameters.Receptor.Valency * ...
+%     app.Parameters.Ligand(1).Valency * ...
+%     app.Parameters.Ligand(2).Valency * ...
+%     app.Parameters.Ligand(3).Valency) ...
+%     + ...
+%     size(table2array(app.TimePoints),1) * ...
+%     (app.app.Parameters.Receptor.Valency + ...
+%     app.Parameters.Ligand(1).Valency + ...
+%     app.Parameters.Ligand(2).Valency + ...
+%     app.Parameters.Ligand(3).Valency) ...;
+    
+%---------------------------------------------------------------------------------------------------
+% if ~isfield(app.Parameters, "EffCs")
+% app.Parameters.EffCs = struct();
+% end
+% EffC_names = ["EffC_inline_Receptor1_from1_to2_0_Ligand1_from1_to2_0"	"EffC_inline_Receptor1_from1_to2_0_Ligand1_from1_to2_0"
+% "EffC_inline_Receptor1_from1_to2_0_Ligand1_from1_to3_0"	"EffC_inline_Receptor1_from1_to2_0_Ligand1_from1_to3_0"
+% "EffC_inline_Receptor1_from1_to2_0_Ligand1_from2_to3_0"	"EffC_inline_Receptor1_from1_to2_0_Ligand1_from2_to3_0"
+% "EffC_inline_Receptor1_from1_to2_0_Ligand2_from1_to2_0"	"EffC_inline_Receptor1_from1_to2_0_Ligand2_from1_to2_0"
+% "EffC_inline_Receptor1_from1_to2_0_Ligand2_from1_to3_0"	"EffC_inline_Receptor1_from1_to2_0_Ligand2_from1_to3_0"
+% "EffC_inline_Receptor1_from1_to2_0_Ligand2_from2_to3_0"	"EffC_inline_Receptor1_from1_to2_0_Ligand2_from2_to3_0"
+% "EffC_inline_Receptor1_from1_to2_0_Ligand3_from1_to2_0"	"EffC_inline_Receptor1_from1_to2_0_Ligand3_from1_to2_0"
+% "EffC_inline_Receptor1_from1_to2_0_Ligand3_from1_to3_0"	"EffC_inline_Receptor1_from1_to2_0_Ligand3_from1_to3_0"
+% "EffC_inline_Receptor1_from1_to2_0_Ligand3_from2_to3_0"	"EffC_inline_Receptor1_from1_to2_0_Ligand3_from2_to3_0"
+% "EffC_inline_Receptor1_from1_to3_0_Ligand1_from1_to2_0"	"EffC_inline_Receptor1_from1_to3_0_Ligand1_from1_to2_0"
+% "EffC_inline_Receptor1_from1_to3_0_Ligand1_from1_to3_0"	"EffC_inline_Receptor1_from1_to3_0_Ligand1_from1_to3_0"
+% "EffC_inline_Receptor1_from1_to3_0_Ligand1_from2_to3_0"	"EffC_inline_Receptor1_from1_to3_0_Ligand1_from2_to3_0"
+% "EffC_inline_Receptor1_from1_to3_0_Ligand2_from1_to2_0"	"EffC_inline_Receptor1_from1_to3_0_Ligand2_from1_to2_0"
+% "EffC_inline_Receptor1_from1_to3_0_Ligand2_from1_to3_0"	"EffC_inline_Receptor1_from1_to3_0_Ligand2_from1_to3_0"
+% "EffC_inline_Receptor1_from1_to3_0_Ligand2_from2_to3_0"	"EffC_inline_Receptor1_from1_to3_0_Ligand2_from2_to3_0"
+% "EffC_inline_Receptor1_from1_to3_0_Ligand3_from1_to2_0"	"EffC_inline_Receptor1_from1_to3_0_Ligand3_from1_to2_0"
+% "EffC_inline_Receptor1_from1_to3_0_Ligand3_from1_to3_0"	"EffC_inline_Receptor1_from1_to3_0_Ligand3_from1_to3_0"
+% "EffC_inline_Receptor1_from1_to3_0_Ligand3_from2_to3_0"	"EffC_inline_Receptor1_from1_to3_0_Ligand3_from2_to3_0"
+% "EffC_inline_Receptor1_from1_to3_2_Ligand1_from1_to3_2"	"EffC_inline_Receptor1_from2_to3_0_Ligand1_from2_to3_0"
+% "EffC_inline_Receptor1_from1_to3_2_Ligand2_from1_to3_2"	"EffC_inline_Receptor1_from2_to3_0_Ligand2_from2_to3_0"
+% "EffC_inline_Receptor1_from1_to3_2_Ligand3_from1_to3_2"	"EffC_inline_Receptor1_from2_to3_0_Ligand3_from2_to3_0"
+% "EffC_inline_Receptor1_from2_to1_3_Ligand1_from2_to1_3"	"EffC_inline_Receptor1_from1_to2_0_Ligand1_from1_to2_0"
+% "EffC_inline_Receptor1_from2_to1_3_Ligand2_from2_to1_3"	"EffC_inline_Receptor1_from1_to2_0_Ligand2_from1_to2_0"
+% "EffC_inline_Receptor1_from2_to1_3_Ligand3_from2_to1_3"	"EffC_inline_Receptor1_from1_to2_0_Ligand3_from1_to2_0"
+% "EffC_inline_Receptor1_from2_to3_0_Ligand1_from1_to2_0"	"EffC_inline_Receptor1_from2_to3_0_Ligand1_from1_to2_0"
+% "EffC_inline_Receptor1_from2_to3_0_Ligand1_from1_to3_0"	"EffC_inline_Receptor1_from2_to3_0_Ligand1_from1_to3_0"
+% "EffC_inline_Receptor1_from2_to3_0_Ligand1_from2_to3_0"	"EffC_inline_Receptor1_from2_to3_0_Ligand1_from2_to3_0"
+% "EffC_inline_Receptor1_from2_to3_0_Ligand2_from1_to2_0"	"EffC_inline_Receptor1_from2_to3_0_Ligand2_from1_to2_0"
+% "EffC_inline_Receptor1_from2_to3_0_Ligand2_from1_to3_0"	"EffC_inline_Receptor1_from2_to3_0_Ligand2_from1_to3_0"
+% "EffC_inline_Receptor1_from2_to3_0_Ligand2_from2_to3_0"	"EffC_inline_Receptor1_from2_to3_0_Ligand2_from2_to3_0"
+% "EffC_inline_Receptor1_from2_to3_0_Ligand3_from1_to2_0"	"EffC_inline_Receptor1_from2_to3_0_Ligand3_from1_to2_0"
+% "EffC_inline_Receptor1_from2_to3_0_Ligand3_from1_to3_0"	"EffC_inline_Receptor1_from2_to3_0_Ligand3_from1_to3_0"
+% "EffC_inline_Receptor1_from2_to3_0_Ligand3_from2_to3_0"	"EffC_inline_Receptor1_from2_to3_0_Ligand3_from2_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_0_Ligand1_from1_to2_0"	"EffC_reverse_Receptor1_from1_to2_0_Ligand1_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to2_0_Ligand1_from1_to3_0"	"EffC_reverse_Receptor1_from1_to2_0_Ligand1_from1_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_0_Ligand1_from2_to3_0"	"EffC_reverse_Receptor1_from1_to2_0_Ligand1_from2_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_0_Ligand2_from1_to2_0"	"EffC_reverse_Receptor1_from1_to2_0_Ligand2_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to2_0_Ligand2_from1_to3_0"	"EffC_reverse_Receptor1_from1_to2_0_Ligand2_from1_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_0_Ligand2_from2_to3_0"	"EffC_reverse_Receptor1_from1_to2_0_Ligand2_from2_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_0_Ligand3_from1_to2_0"	"EffC_reverse_Receptor1_from1_to2_0_Ligand3_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to2_0_Ligand3_from1_to3_0"	"EffC_reverse_Receptor1_from1_to2_0_Ligand3_from1_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_0_Ligand3_from2_to3_0"	"EffC_reverse_Receptor1_from1_to2_0_Ligand3_from2_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_3_Ligand1_from1_to2_3"	"EffC_reverse_Receptor1_from1_to2_0_Ligand1_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to2_3_Ligand1_from1_to3_2"	"EffC_reverse_Receptor1_from1_to2_0_Ligand1_from1_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_3_Ligand1_from2_to1_3"	"EffC_reverse_Receptor1_from1_to2_0_Ligand1_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to2_3_Ligand2_from1_to2_3"	"EffC_reverse_Receptor1_from1_to2_0_Ligand2_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to2_3_Ligand2_from1_to3_2"	"EffC_reverse_Receptor1_from1_to2_0_Ligand2_from2_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_3_Ligand2_from2_to1_3"	"EffC_reverse_Receptor1_from1_to2_0_Ligand2_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to2_3_Ligand3_from1_to2_3"	"EffC_reverse_Receptor1_from1_to2_0_Ligand3_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to2_3_Ligand3_from1_to3_2"	"EffC_reverse_Receptor1_from1_to2_0_Ligand3_from2_to3_0"
+% "EffC_reverse_Receptor1_from1_to2_3_Ligand3_from2_to1_3"	"EffC_reverse_Receptor1_from1_to2_0_Ligand3_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to3_0_Ligand1_from1_to2_0"	"EffC_reverse_Receptor1_from1_to3_0_Ligand1_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to3_0_Ligand1_from1_to3_0"	"EffC_reverse_Receptor1_from1_to3_0_Ligand1_from1_to3_0"
+% "EffC_reverse_Receptor1_from1_to3_0_Ligand1_from2_to3_0"	"EffC_reverse_Receptor1_from1_to3_0_Ligand1_from2_to3_0"
+% "EffC_reverse_Receptor1_from1_to3_0_Ligand2_from1_to2_0"	"EffC_reverse_Receptor1_from1_to3_0_Ligand2_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to3_0_Ligand2_from1_to3_0"	"EffC_reverse_Receptor1_from1_to3_0_Ligand2_from1_to3_0"
+% "EffC_reverse_Receptor1_from1_to3_0_Ligand2_from2_to3_0"	"EffC_reverse_Receptor1_from1_to3_0_Ligand2_from2_to3_0"
+% "EffC_reverse_Receptor1_from1_to3_0_Ligand3_from1_to2_0"	"EffC_reverse_Receptor1_from1_to3_0_Ligand3_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to3_0_Ligand3_from1_to3_0"	"EffC_reverse_Receptor1_from1_to3_0_Ligand3_from1_to3_0"
+% "EffC_reverse_Receptor1_from1_to3_0_Ligand3_from2_to3_0"	"EffC_reverse_Receptor1_from1_to3_0_Ligand3_from2_to3_0"
+% "EffC_reverse_Receptor1_from1_to3_2_Ligand1_from1_to2_3"	"EffC_reverse_Receptor1_from2_to3_0_Ligand1_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to3_2_Ligand1_from2_to1_3"	"EffC_reverse_Receptor1_from2_to3_0_Ligand1_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to3_2_Ligand2_from1_to2_3"	"EffC_reverse_Receptor1_from2_to3_0_Ligand2_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to3_2_Ligand2_from2_to1_3"	"EffC_reverse_Receptor1_from2_to3_0_Ligand2_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to3_2_Ligand3_from1_to2_3"	"EffC_reverse_Receptor1_from2_to3_0_Ligand3_from1_to2_0"
+% "EffC_reverse_Receptor1_from1_to3_2_Ligand3_from2_to1_3"	"EffC_reverse_Receptor1_from2_to3_0_Ligand3_from1_to2_0"
+% "EffC_reverse_Receptor1_from2_to1_3_Ligand1_from1_to2_3"	"EffC_reverse_Receptor1_from1_to2_0_Ligand1_from1_to2_0"
+% "EffC_reverse_Receptor1_from2_to1_3_Ligand1_from1_to3_2"	"EffC_reverse_Receptor1_from1_to2_0_Ligand1_from2_to3_0"
+% "EffC_reverse_Receptor1_from2_to1_3_Ligand2_from1_to2_3"	"EffC_reverse_Receptor1_from1_to2_0_Ligand2_from1_to2_0"
+% "EffC_reverse_Receptor1_from2_to1_3_Ligand2_from1_to3_2"	"EffC_reverse_Receptor1_from1_to2_0_Ligand2_from2_to3_0"
+% "EffC_reverse_Receptor1_from2_to1_3_Ligand3_from1_to2_3"	"EffC_reverse_Receptor1_from1_to2_0_Ligand3_from1_to2_0"
+% "EffC_reverse_Receptor1_from2_to1_3_Ligand3_from1_to3_2"	"EffC_reverse_Receptor1_from1_to2_0_Ligand3_from2_to3_0"
+% "EffC_reverse_Receptor1_from2_to3_0_Ligand1_from1_to2_0"	"EffC_reverse_Receptor1_from2_to3_0_Ligand1_from1_to2_0"
+% "EffC_reverse_Receptor1_from2_to3_0_Ligand1_from1_to3_0"	"EffC_reverse_Receptor1_from2_to3_0_Ligand1_from1_to3_0"
+% "EffC_reverse_Receptor1_from2_to3_0_Ligand1_from2_to3_0"	"EffC_reverse_Receptor1_from2_to3_0_Ligand1_from2_to3_0"
+% "EffC_reverse_Receptor1_from2_to3_0_Ligand2_from1_to2_0"	"EffC_reverse_Receptor1_from2_to3_0_Ligand2_from1_to2_0"
+% "EffC_reverse_Receptor1_from2_to3_0_Ligand2_from1_to3_0"	"EffC_reverse_Receptor1_from2_to3_0_Ligand2_from1_to3_0"
+% "EffC_reverse_Receptor1_from2_to3_0_Ligand2_from2_to3_0"	"EffC_reverse_Receptor1_from2_to3_0_Ligand2_from2_to3_0"
+% "EffC_reverse_Receptor1_from2_to3_0_Ligand3_from1_to2_0"	"EffC_reverse_Receptor1_from2_to3_0_Ligand3_from1_to2_0"
+% "EffC_reverse_Receptor1_from2_to3_0_Ligand3_from1_to3_0"	"EffC_reverse_Receptor1_from2_to3_0_Ligand3_from1_to3_0"
+% "EffC_reverse_Receptor1_from2_to3_0_Ligand3_from2_to3_0"	"EffC_reverse_Receptor1_from2_to3_0_Ligand3_from2_to3_0"];
+% 
+% if isfield(app.Parameters, "Effective_concentrations")
+% for i = 1:length(EffC_names)
+%     if isempty(find(EffC_names(i,2) == [app.Parameters.Effective_concentrations.EffC.name]))
+%         continue
+%     else
+%     app.Parameters.EffCs.(EffC_names(i,1)) = app.Parameters.Effective_concentrations.EffC(find(EffC_names(i,2) == [app.Parameters.Effective_concentrations.EffC.name])).Value;
+%     end
+% end
+% end
+% % app.Parameters.EffCs = struct();
+% % effC_name_converter(app)
 %------------------------------------------------------------------------------------------------
-% RU multiplyer calculation
 State_Names_Table = State_Names(app);
 %multiplyer = [];
 RU_multiplyer = [];
@@ -19,7 +124,7 @@ for i = 1:length(State_Names_Table)
 end
  %-----------------------------------------------------------------------------------------------
 
-% Ligand classs generated based on ligand rules 
+
 MLigand_classes = zeros(size(State_Names_Table,1),1);
 
 MLigand_classes(...
@@ -61,7 +166,6 @@ MLigand_classes(...
 
 MLigand_classes = MLigand_classes';
 
-% Valency classs generated based on valency rules 
 MValency_classes = zeros(size(State_Names_Table,1),1);
     for i = 1:length(State_Names_Table)
         switch sum(State_Names_Table(i,:)~=0)
@@ -96,7 +200,7 @@ MValency_classes = zeros(size(State_Names_Table,1),1);
     end
     MValency_classes = MValency_classes';
     
-% Mixed classs generated based on mixed class rules     
+    
     Mixed_classes = zeros(size(State_Names_Table,1),1);
     for i = 1:length(State_Names_Table)
         if sum(floor(State_Names_Table(i,:)/100)==1)==3
@@ -193,9 +297,10 @@ MValency_classes = zeros(size(State_Names_Table,1),1);
         end
     end
     Mixed_classes = Mixed_classes';
+% timepoints = [100, 5e-9, 5e-9, 5e-8;
+%               150, 5e-11, 5e-11, 5e-11;
+%               200, 0, 0, 0];
 
-    
-% Funciton call for the ODE solver 
 
 [Output_values.States.conc, Output_values.States.time]  = diff_time_series_calculation_3x3x3(app, size(State_Names_Table,1));%, Kons, Koffs, EffCs);
     Output_values.States.conc = (Output_values.States.conc(:,1:(end)));
@@ -217,8 +322,7 @@ end
     
 end
 
-function [Class_concentration, Class_RU, class_names]= Convert_to_state_classes(States, class_name_list, RU_multiplyer)   
-% This function merges state to state classes based on the class rules 
+function [Class_concentration, Class_RU, class_names]= Convert_to_state_classes(States, class_name_list, RU_multiplyer)    
     class_names = unique(class_name_list);
     Class_concentration=zeros(length(States.time), length(class_names));
     Class_RU=zeros(length(States.time), length(class_names));
@@ -231,8 +335,6 @@ function [Class_concentration, Class_RU, class_names]= Convert_to_state_classes(
 end
 
 function [Array_short_states] = State_Names(app)
-% Function that creates all the state names 
-
 vR = app.Parameters.Receptor.Valency;
 vL1 = app.Parameters.Ligand(1).Valency;
 vL2 = app.Parameters.Ligand(2).Valency;
@@ -311,6 +413,9 @@ switch vR
 end
 
 
+%state_array = table2array(struct2table(state));
+%% Elimination of states where same position present multiple times
+%state = state(~( (state_array(:,1) ~= 0 & state_array(:,1) == state_array(:,2)) | (state_array(:,2) ~= 0 & state_array(:,2) == state_array(:,3)) | (state_array(:,1) ~= 0 & state_array(:,1) == state_array(:,3))));
 %% State name reduction
 all_states = state;
 if vR>1
