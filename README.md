@@ -4,13 +4,13 @@ The installation files for MVsim can be found at [https://github.com/sarkarlab/M
 
 ***
 
-MVsim v0.9
+MVsim v1.0
 
 Bence Bruncsics, Wesley J. Errington, Casim A. Sarkar
 
 University of Minnesota
 
-June 26, 2021
+May 13, 2022
 
 MVsim is licensed under the [MIT License](https://github.com/sarkarlab/MVsim/blob/main/LICENSE).
 
