@@ -41,7 +41,7 @@ Option 1:
 2. Running the MyAppInstaller_web.exe executable file and follow the installation instractions
 3. Run the installd version of MVsim.
 Option 2:
-1. Download the MVsim version packaged with runtime for [Windows](https://drive.google.com/file/d/1t2faUYdFB_fPUUW7-Ic0rqdvZmEeNVH5/view?usp=sharing), [linux]() or for [Mac]()
+1. Download the MVsim version packaged with runtime for [windows](https://drive.google.com/file/d/1t2faUYdFB_fPUUW7-Ic0rqdvZmEeNVH5/view?usp=sharing), [linux]() or for [mac]()
 2. Follow the installation guide and launch the program
 
 The directory MVSim contains the following uncompiled files and folders for the model:
