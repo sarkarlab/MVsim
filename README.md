@@ -39,7 +39,7 @@ Installation and setup for standalone desctop app:
 
 Option 1:
 1. Downloading and installing MATLAB [Runtime](https://www.mathworks.com/products/compiler/matlab-runtime.html) for [windows](https://ssd.mathworks.com/supportfiles/downloads/R2021a/Release/5/deployment_files/installer/complete/win64/MATLAB_Runtime_R2021a_Update_5_win64.zip), [linux](https://ssd.mathworks.com/supportfiles/downloads/R2021a/Release/5/deployment_files/installer/complete/glnxa64/MATLAB_Runtime_R2021a_Update_5_glnxa64.zip), [mac](https://ssd.mathworks.com/supportfiles/downloads/R2021a/Release/5/deployment_files/installer/complete/maci64/MATLAB_Runtime_R2021a_Update_5_maci64.dmg.zip)
-2. Running the MyAppInstaller_web.exe executable file and follow the installation instractions
+2. Running the executables  MVsim_standalone_win.exe for windows or the MVsim_standalone_linux.install for linux and follow the installation instractions
 3. Run the installd version of MVsim.
 
 Option 2:
