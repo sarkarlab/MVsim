@@ -28,7 +28,7 @@ Requirements:
 Available App version
 - MATLAB app: App installation file for MATLAB users
 - Standalone Desktop App: Desktop application compiled by MATLAB
-- Web App: deployable web app file
+- Web App: deployable web app file for closed networks
 
 Installation and setup for the Web App:
 1. Setting up the webserver by following the [instructions](https://www.mathworks.com/help/webappserver/ug/set-up-matlab-web-app-server.html)
@@ -43,14 +43,16 @@ Option 1:
 3. Run the installd version of MVsim.
 
 Option 2:
-1. Download the MVsim version packaged with runtime for [windows](https://drive.google.com/file/d/1t2faUYdFB_fPUUW7-Ic0rqdvZmEeNVH5/view?usp=sharing), [linux]() or for [mac]()
+1. Download the MVsim version packaged with runtime for [windows](https://drive.google.com/file/d/1t2faUYdFB_fPUUW7-Ic0rqdvZmEeNVH5/view?usp=sharing), [linux](https://drive.google.com/file/d/1fyZaCK-gv5_QDpjtiGB-grR5D2zk61C2/view?usp=sharing) or for [mac]()
 2. Follow the installation guide and launch the program
+
+***
 
 The directory MVSim contains the following uncompiled files and folders for the model:
 
 * [Images] Containing the png files in the Images folder for the GUI 
 * [Diffs] Containing the 189 automatically generates .m files with the ODE system for the MATLAB ODE solver
-* MVsim_GUI_V1_9.mlapp – the code for the GUI interface in the MATLAB App Designer	
+* MVsim_GUI_V10.mlapp – the code for the GUI interface in the MATLAB App Designer	
 * GUI_Manual_input3x3x3.m – The code for plotting and for initial information for the model
 * EffC_Calculator_polar.m - Used for the effective concentration calculation using polar coordinate integration in the GUI
 * [Support_Scripts] - A collection of scripts used for state and ODE system genration used for the .m files generation is the Diffs folder (not required for the GUI) 
