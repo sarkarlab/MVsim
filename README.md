@@ -67,7 +67,7 @@ Web App:
 
 MATLAB App:
 1. Install MATLAB MVsim app
-2. Input parameters and press initiate and run button
+2. Input parameters and press the initiate and run button. For more details follow the "MVsim user tutorial.pdf" file
 
 Installation and run times:
 1. Typical installation time is ~1 min.
